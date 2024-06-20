@@ -7,11 +7,15 @@ const { mongoose } = require('mongoose');
 
 
 app.use(express.json())
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: "http://localhost:3000",
+//   })
+// );
+
 app.use(
-  cors({
-    credentials: true,
-    origin: "http://localhost:3000",
-  })
+  cors()
 );
 
 mongoose.connect(process.env.MONGO_URL);
